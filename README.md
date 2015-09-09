@@ -54,13 +54,9 @@ Use ZTable for Show data from database in the browser
 		    }
   		})
 ```
-Result
-------------------------
-
-![Alt text](https://s3.amazonaws.com/f.cl.ly/items/3n310j1C253o1d303I3F/Screen%20Shot%202015-09-09%20at%2012.48.23%20PM.png "Optional title")
 
 ## Json Structure
-
+This is how you have build your data from server.
 ```js
 {
   "data": [
@@ -102,7 +98,6 @@ Result
 ```
 ## API Description
 
-
 | Parameter       | Description      |
 | -------------   | --------------------- | 
 | source          | Url source json from server         |
@@ -120,9 +115,9 @@ Result
 | searcher        | Table draw Search Section enable search action using source, parameter {keyword}  is sending in the ajax request  |
 | sortable        | Sortable columns , see section Headers Configuration for details, each column can be overrided for custom controll  |
 | checkbox        | Set checkbox column   |
-| checkbox        | Set checkbox column   |
+| searchtext        | Set placeholder text in the seach input.  Default is 'Enter keyword to find, press enter'  |
 
-
+## Supported Handlers Events 
 
 | Parameter       | Description      |
 | -------------   | --------------------- | 
