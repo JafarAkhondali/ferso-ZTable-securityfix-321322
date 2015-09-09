@@ -17,42 +17,42 @@ Use ZTable for Show data from database in the browser
 
 // Callg the plugin 
  $('#theTable').Table({
-  			source   :'http://localhost:1337/products/table',
-  			method   :'GET',
-  			type     :'table',
-  			rows     :10,
-  			sortable :true,
-  			checkbox :true,
-  			headers  :{
-		      "sku"			:{name:'SKU',width:'100px', link:true, label :'danger', title:"Click to view details"},
-		      "description" :{name:'Descripción',width:'300px', link:true, title:"Click to view details"},
-		      "price"		:{name:'Precio',width:'100px',type:'money', align:'right'},
-		      "qty"			:{name:'Cantidad',align:'center',width:'100px', value:function(i,o){
-		      		return o.qty+' '+o.unity;
-		      }}, 	
-		      "category"    :{name:'Categoría',width:'100px', align:'left', label:'success'}, 
-		      "id"	:{name:'Eliminar',width:'100px', align:'center', sort:false, value:function(i,o) {
-		      		return '<span class="glyphicon glyphicon-remove text-danger ztable-cursor" data-value="'+o.sku+'" ></span>';
-		      }}
-		    }, 
-		    onLink: function(e){
-		    	console.log(e);
-		    },
-		    onCheckBox: function(check){
-		    	console.log('is checked',check);
-		    },
-		    onCheckBoxMain : function(checked){
-		    	console.log(checked)
-		    },
-		    onCompleteRequest:function(){
-		    	$('#theTable .glyphicon-remove').click(function(){		    		
-		    		if( confirm('are you sure to delete item: '+  $(this).attr('data-value') )  ) {
+  	source   :'http://localhost:1337/products/table',
+  	method   :'GET',
+  	type     :'table',
+  	rows     :10,
+  	sortable :true,
+  	checkbox :true,
+  	headers  :{
+      "sku"			:{name:'SKU',width:'100px', link:true, label :'danger', title:"Click to view details"},
+      "description" :{name:'Descripción',width:'300px', link:true, title:"Click to view details"},
+      "price"		:{name:'Precio',width:'100px',type:'money', align:'right'},
+      "qty"			:{name:'Cantidad',align:'center',width:'100px', value:function(i,o){
+      		return o.qty+' '+o.unity;
+      }}, 	
+      "category"    :{name:'Categoría',width:'100px', align:'left', label:'success'}, 
+      "id"	:{name:'Eliminar',width:'100px', align:'center', sort:false, value:function(i,o) {
+      		return '<span class="glyphicon glyphicon-remove text-danger ztable-cursor" data-value="'+o.sku+'" ></span>';
+      }}
+    }, 
+    onLink: function(e){
+    	console.log(e);
+    },
+    onCheckBox: function(check){
+    	console.log('is checked',check);
+    },
+    onCheckBoxMain : function(checked){
+    	console.log(checked)
+    },
+    onCompleteRequest:function(){
+    	$('#theTable .glyphicon-remove').click(function(){		    		
+    		if( confirm('are you sure to delete item: '+  $(this).attr('data-value') )  ) {
 
-		    		}
-		    	});
-		    	 $('#theTable  [data-toggle="tooltip"]').tooltip()
-		    }
-  		})
+    		}
+    	});
+    	 $('#theTable  [data-toggle="tooltip"]').tooltip()
+    }
+  })
 ```
 
 ## Json Structure
