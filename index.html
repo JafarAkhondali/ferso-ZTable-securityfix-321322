@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+	<head>
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="generator" content="WordPress. "/>
+		<title> Ztable </title>		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+
+		<!--Import jQuery -->
+		<script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
+
+		<!--Import Bootstrap -->
+		<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!--Import Table -->
+		<script type="text/javascript" src="/lib/ztable/ztable.js"></script>
+		<link rel="stylesheet" href="/lib/ztable/table.css">
+
+		<!-- theme -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,100,100italic,300,500' rel='stylesheet' type='text/css'>
+
+		
+		<style type="text/css">
+		
+			body:{
+				font-family: 'Roboto', sans-serif;
+				font-size: 10px;
+				font-weight: 100;
+			}
+
+		</style>
+	</head>
+  
+  </head>
+  <body>
+  
+	   <div class="container-fluid">			
+	   		<div class="row">			
+	   				<div class="col-md-12">
+	   					<h2>ZTable Demo</h2>
+	   					<div id="theTable"></div>
+	   				</div>
+	   		</div>
+
+	   </div> <!-- end page -->
+
+  </body>
+
+
+  <script type="text/javascript">
+
+  		theTable = $('#theTable').Table({
+  			source   :'http://localhost:1337/products/table',
+  			method   :'GET',
+  			type     :'table',
+  			rows     :10,
+  			sortable :true,
+  			checkbox :true,
+  			headers  :{
+		      "sku"			:{name:'SKU',width:'100px', link:true, label :'danger', title:"Click to view details", hide:true},
+		      "description" :{name:'Descripción',width:'300px', link:true, title:"Click to view details"},
+		      "price"		:{name:'Precio',width:'100px',type:'money', align:'right'},
+		      "qty"			:{name:'Cantidad',align:'center',width:'100px', value:function(i,o){
+		      		return o.qty+' '+o.unity;
+		      }}, 	
+		      "category"    :{name:'Categoría',width:'100px', align:'left', label:'success'}, 
+		      "keywords"	:{name:'Eliminar',width:'100px', align:'center', sort:false, value:function(i,o) {
+		      		return '<span class="glyphicon glyphicon-remove text-danger ztable-cursor" data-value="'+o.sku+'" data-toggle="tooltip" data-placement="left" title="Click to delete this item"></span>';
+		      }}
+		    }, 
+		    onLink: function(e){
+		    	console.log(e);
+		    },
+		    onCheckBox: function(check){
+		    	console.log('is checked',check);
+		    },
+		    onCheckBoxMain : function(checked){
+		    	console.log(checked)
+		    },
+		    onCompleteRequest:function(){
+		    	$('#theTable .glyphicon-remove').click(function(){		    		
+		    		if( confirm('are you sure to delete item: '+  $(this).attr('data-value') )  ) {
+
+		    		}
+		    	});
+		    	 $('#theTable  [data-toggle="tooltip"]').tooltip()
+		    }
+  		})
+
+  </script>
+				
+</html>
