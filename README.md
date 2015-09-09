@@ -106,7 +106,30 @@ Result
 ## API Description
 
 | Parameter       | Description      |
-| -------------   | ---------------------| 
-| source          | Url source json from server         |
-| params          | Parameters for the source url ex.  {from:2015-06-01, to: 2015-06-31}  |
-| method          | Request Method for data  _POST, _GET. Default is GET |
+| -------------   | --------------------- | 
+| onBeforeRequest          | Called before ajax request is started. Return  full table object
+| onRequestFail            | Called when ajax request is faild. Return XHR object
+| onCompleteRequest        | Called when request is completed and drawed table with the data. Return data object request and full table object
+| onBeforeCreateRow        | Called before the data row is drawed, return row object
+| onCheckBoxMain           | Called when checkallInput is checked return all primary values selected
+| onCheckBox               | Called when a checkbox in row is checked
+| onBeforeCreateCell       | Called before create data cell
+| onLink                   | Called when link is clicked
+
+
+## Headers Configuration
+
+```js
+{
+          "sku"     :{name:'SKU',width:'100px', link:true, label :'danger', title:"Click to view details", hide:true},
+          "description" :{name:'Descripción',width:'300px', link:true, title:"Click to view details"},
+          "price"   :{name:'Precio',width:'100px',type:'money', align:'right'},
+          "qty"     :{name:'Cantidad',align:'center',width:'100px', value:function(i,o){
+              return o.qty+' '+o.unity;
+          }},   
+          "category"    :{name:'Categoría',width:'100px', align:'left', label:'success'}, 
+          "keywords"  :{name:'Eliminar',width:'100px', align:'center', sort:false, value:function(i,o) {
+              return '<span class="glyphicon glyphicon-remove text-danger ztable-cursor" data-value="'+o.sku+'" data-toggle="tooltip" data-placement="left" title="Click to delete this item"></span>';
+          }
+
+```
