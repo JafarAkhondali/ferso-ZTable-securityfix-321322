@@ -133,17 +133,35 @@ This is how you have build your data from server.
 
 ## Headers Configuration
 
+// Object Structure Key is the name in your database or unique identifier
+
+| Parameter       | Description      |
+| -------------   | --------------------- | 
+| name                     | is the display in the column
+| width                    | width of the column 
+| link                     | ZTable can be display a value with link the action return entire row object. Default is false 
+| label                    | ZTable can be draw value inside a boostrap label, use this to enable, Default is false ![Alt text](https://s3.amazonaws.com/f.cl.ly/items/2d2E3R2h1v0v3C0g0Y2o/Image%202015-09-09%20at%202.17.37%20PM.png "Label")
+| title                    | ZTable can be draw value with boostrap tooltip capabilities you need enable onComplete request, enable this passing the text to display in the tooltip
+| align                    | Column content aling
+| sort                   | Disable or enable sort in this column. Default is true
+| value                    | Is a function receive object row html and object data row, you need return anything content you want to display in this column. 
+```js
+value:function(i,o){
+  return o.qty+' '+o.unity;
+} 
+``` 
+
 ```js
 {
-          "sku"     :{name:'SKU',width:'100px', link:true, label :'danger', title:"Click to view details", hide:true},
-          "description" :{name:'Descripción',width:'300px', link:true, title:"Click to view details"},
-          "price"   :{name:'Precio',width:'100px',type:'money', align:'right'},
-          "qty"     :{name:'Cantidad',align:'center',width:'100px', value:function(i,o){
-              return o.qty+' '+o.unity;
-          }},   
-          "category"    :{name:'Categoría',width:'100px', align:'left', label:'success'}, 
-          "keywords"  :{name:'Eliminar',width:'100px', align:'center', sort:false, value:function(i,o) {
-              return '<span class="glyphicon glyphicon-remove text-danger ztable-cursor" data-value="'+o.sku+'" data-toggle="tooltip" data-placement="left" title="Click to delete this item"></span>';
-          }
+"sku"     :{name:'SKU',width:'100px', link:true, label :'danger', title:"Click to view details", hide:true},
+"description" :{name:'Descripción',width:'300px', link:true, title:"Click to view details"},
+"price"   :{name:'Precio',width:'100px',type:'money', align:'right'},
+"qty"     :{name:'Cantidad',align:'center',width:'100px', value:function(i,o){
+	return o.qty+' '+o.unity;
+}},   
+"category"    :{name:'Categoría',width:'100px', align:'left', label:'success'}, 
+"id"  :{name:'Eliminar',width:'100px', align:'center', sort:false, value:function(i,o) {
+	return '<span class="glyphicon glyphicon-remove text-danger ztable-cursor" data-value="'+o.sku+'" data-toggle="tooltip" data-placement="left" title="Click to delete this item"></span>';
+}
 
 ```
