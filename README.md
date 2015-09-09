@@ -54,12 +54,10 @@ Use ZTable for Show data from database in the browser
 		    }
   		})
 ```
-
 Result
 ------------------------
 
 ![Alt text](https://s3.amazonaws.com/f.cl.ly/items/3n310j1C253o1d303I3F/Screen%20Shot%202015-09-09%20at%2012.48.23%20PM.png "Optional title")
-
 
 ## Json Structure
 
@@ -102,8 +100,29 @@ Result
 }
 
 ```
-
 ## API Description
+
+
+| Parameter       | Description      |
+| -------------   | --------------------- | 
+| source          | Url source json from server         |
+| params          | Parameters for the source url ex.  {from:2015-06-01, to: 2015-06-31}      |
+| method          | Request Method for data  _POST, _GET. Default is GET    |
+| allowAbort      | Allow abort previous ajax request to server. Default is false  |
+| primary         | ID key in the collection. Default is the {id} column in the json object  |
+| auto            | Table load at start: Boolean : true | false  |
+| headers         | Define colums headers, view section Headers Configuration for details |
+| showHeaders     | Table draw the headers. Default is true |
+| rows            | Max rows in request |
+| page            | Define Page to start table |
+| mpv             | Max draw pages in the view. Default is 5 |
+| navigation      | Table draw navigation section. Default is true |
+| searcher        | Table draw Search Section enable search action using source, parameter {keyword}  is sending in the ajax request  |
+| sortable        | Sortable columns , see section Headers Configuration for details, each column can be overrided for custom controll  |
+| checkbox        | Set checkbox column   |
+| checkbox        | Set checkbox column   |
+
+
 
 | Parameter       | Description      |
 | -------------   | --------------------- | 
