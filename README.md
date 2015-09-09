@@ -1,5 +1,10 @@
 # ZTable Jquery Plugin For Bootstrap
 
+Use ZTable for Show data from database in the browser
+
+## Usage
+
+
 ```js
 
  $('#theTable').Table({
@@ -10,7 +15,7 @@
   			sortable :true,
   			checkbox :true,
   			headers  :{
-		      "sku"			:{name:'SKU',width:'100px', link:true, label :'danger', title:"Click to view details", hide:true},
+		      "sku"			:{name:'SKU',width:'100px', link:true, label :'danger', title:"Click to view details"},
 		      "description" :{name:'Descripción',width:'300px', link:true, title:"Click to view details"},
 		      "price"		:{name:'Precio',width:'100px',type:'money', align:'right'},
 		      "qty"			:{name:'Cantidad',align:'center',width:'100px', value:function(i,o){
