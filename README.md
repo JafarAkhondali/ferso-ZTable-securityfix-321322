@@ -31,8 +31,8 @@ Use ZTable for Show data from database in the browser
 		      		return o.qty+' '+o.unity;
 		      }}, 	
 		      "category"    :{name:'Categoría',width:'100px', align:'left', label:'success'}, 
-		      "keywords"	:{name:'Eliminar',width:'100px', align:'center', sort:false, value:function(i,o) {
-		      		return '<span class="glyphicon glyphicon-remove text-danger ztable-cursor" data-value="'+o.sku+'" data-toggle="tooltip" data-placement="left" title="Click to delete this item"></span>';
+		      "id"	:{name:'Eliminar',width:'100px', align:'center', sort:false, value:function(i,o) {
+		      		return '<span class="glyphicon glyphicon-remove text-danger ztable-cursor" data-value="'+o.sku+'" ></span>';
 		      }}
 		    }, 
 		    onLink: function(e){
