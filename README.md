@@ -1,6 +1,7 @@
 # ZTable Jquery Plugin For Bootstrap
 
 ```js
+
  $('#theTable').Table({
   			source   :'http://localhost:1337/products/table',
   			method   :'GET',
@@ -41,5 +42,12 @@
 ```
 
 
-Example
-![Alt text](https://s3.amazonaws.com/f.cl.ly/items/111g2O0M0s1p412L383r/Screen%20Shot%202015-09-09%20at%2012.51.09%20PM.png "Optional title")
+Result
+![Alt text](https://s3.amazonaws.com/f.cl.ly/items/3n310j1C253o1d303I3F/Screen%20Shot%202015-09-09%20at%2012.48.23%20PM.png"Optional title")
+
+Other
+![Alt text](https://s3.amazonaws.com/f.cl.ly/items/111g2O0M0s1p412L383r/Screen%20Shot%202015-09-09%20at%2012.51.09%20PM.png ")
+
+
+
+
