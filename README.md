@@ -13,7 +13,6 @@ Use ZTable for Show data from database in the browser
 
 ```
 
-
 ```js
 
 // Callg the plugin 
@@ -56,7 +55,58 @@ Use ZTable for Show data from database in the browser
   		})
 ```
 
-
 Result
+------------------------
+
 ![Alt text](https://s3.amazonaws.com/f.cl.ly/items/3n310j1C253o1d303I3F/Screen%20Shot%202015-09-09%20at%2012.48.23%20PM.png "Optional title")
 
+
+## Json Structure
+
+```js
+{
+  "data": [
+    {
+      "sku": "24092561400398601",
+      "description": "Automotivo Esmalte rojos y marrones 1/4",
+      "cost": 0,
+      "price": 79,
+      "qty": 250,
+      "unity": "ML",
+      "category": "automotivas",
+      "keywords": "automotivas,esmaltes",
+      "createdAt": "2015-01-24 03:46:12",
+      "updatedAt": "2015-01-24 03:46:12",
+      "id": 305
+    },
+    {
+      "sku": "24092561400398559",
+      "description": "Alambre",
+      "cost": 0,
+      "price": 25,
+      "qty": 1,
+      "unity": "ML",
+      "category": "complementos",
+      "keywords": "",
+      "createdAt": "2015-01-24 03:46:12",
+      "updatedAt": "2015-01-24 03:46:12",
+      "id": 304
+    }
+  ],
+  "pages": {
+    "current_page": "1",
+    "last_page": 31,
+    "rows": "10",
+    "count": 303
+  }
+}
+
+```
+
+## API Description
+
+| Parameter       | Description      |
+| -------------   | ---------------------| 
+| source          | Url source json from server         |
+| params          | Parameters for the source url ex.  {from:2015-06-01, to: 2015-06-31}  |
+| method          | Request Method for data  _POST, _GET. Default is GET |
