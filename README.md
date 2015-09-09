@@ -2,11 +2,21 @@
 
 Use ZTable for Show data from database in the browser
 
+![Alt text](https://s3.amazonaws.com/f.cl.ly/items/111g2O0M0s1p412L383r/Screen%20Shot%202015-09-09%20at%2012.51.09%20PM.png "Optional title")
+
 ## Usage
+
+```html
+	<!--Import Table -->
+		<script type="text/javascript" src="/lib/ztable/ztable.min.js"></script>
+		<link rel="stylesheet" href="/lib/ztable/ztable.min.css">
+
+```
 
 
 ```js
 
+// Callg the plugin 
  $('#theTable').Table({
   			source   :'http://localhost:1337/products/table',
   			method   :'GET',
@@ -49,10 +59,4 @@ Use ZTable for Show data from database in the browser
 
 Result
 ![Alt text](https://s3.amazonaws.com/f.cl.ly/items/3n310j1C253o1d303I3F/Screen%20Shot%202015-09-09%20at%2012.48.23%20PM.png "Optional title")
-
-![Alt text](https://s3.amazonaws.com/f.cl.ly/items/111g2O0M0s1p412L383r/Screen%20Shot%202015-09-09%20at%2012.51.09%20PM.png "Optional title")
-
-
-
-
 
