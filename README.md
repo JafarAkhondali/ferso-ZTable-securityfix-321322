@@ -88,9 +88,9 @@ This is how you have build your data from server.
     }
   ],
   "pages": {
-    "current_page": "1",
+    "current_page": 1,
     "last_page": 31,
-    "rows": "10",
+    "rows": 10,
     "count": 303
   }
 }
