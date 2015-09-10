@@ -7,9 +7,9 @@ Use ZTable for Show data from database in the browser
 ## Usage
 
 ```html
-	<!--Import Table -->
-		<script type="text/javascript" src="/lib/ztable/ztable.min.js"></script>
-		<link rel="stylesheet" href="/lib/ztable/ztable.min.css">
+<!--Import Table -->
+<script type="text/javascript" src="/lib/ztable/ztable.min.js"></script>
+<link rel="stylesheet" href="/lib/ztable/ztable.min.css">
 
 ```
 
