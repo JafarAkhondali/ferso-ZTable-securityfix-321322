@@ -43,6 +43,11 @@ var file  = 'index.html';
 # This a simple server to test ZTable
 ------------------------------------------------------------ */
 http.createServer(function (req, res) {
+    if (path.normalize(decodeURI(req.url)) !== decodeURI(req.url)) {
+        res.statusCode = 403;
+        res.end();
+        return;
+    }
 	 try{
 	 var uri  = url.parse(req.url).pathname
 	    ,src  = path.join(process.cwd(), uri)
